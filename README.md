@@ -18,3 +18,5 @@ NOTE: The following OpenSCAD commands are not supported:
 - import
 - projection
 - minkowski
+
+WARNING: The conversion is not deterministic, for some models it needs to be converted several times in order to get the proper results!
