@@ -12,3 +12,11 @@ This fork has the necessary changes to support the complex conversions:
 - brep analysis for csg operation to prevent crashes
 
 You also need to have OpenSCAD installed and available in your path.
+
+NOTE: The following OpenSCAD commands are not supported:
+- hull
+- import
+- projection
+- minkowski
+
+WARNING: The conversion is not deterministic, for some models it needs to be converted several times in order to get the proper results!
