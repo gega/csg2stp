@@ -312,22 +312,34 @@ int ac_intersection(int mode, struct trav *trv, const char *fres, const char **a
 int ac_linear_extrude(int mode, struct trav *trv, const char *fres, const char **at)
 {
   int n;
+  static int center=0;
   static double height=1;
-  char *f1;
+  char *f1,*f2;
   
   printf("\n# %s at %d --> %s\n",__FUNCTION__,trv->tagc,fres);
   if(mode==FL_START) height=atof(getattr(at,"height"));
+  if(mode==FL_START) center=(strcmp("true",getattr(at,"center"))==0?1:0);
   if(mode==FL_END&&PEEK(0)->num>0)
   {
     n=PEEK(0)->num;
     if(n>0)
     {
       f1=fresult(trv,1,-1);
+      f2=fresult(trv,2,-1);
       chain(trv,f1,"--csg union");
       printf("$(T)/%s:\t$(T)/%s\n",fres,f1);
-      printf("\t\t%s --create extrusion:file %g,%g,%g $(T)/%s $(T)/%s\n",OCCEXE,0.0,0.0,height,f1,fres);
-      printf("\t\t%s -f $(T)/%s\n",RM,f1);
+      printf("\t\t%s --create extrusion:file %g,%g,%g $(T)/%s $(T)/%s\n",OCCEXE,0.0,0.0,height,f1,f2);
+      if(center)
+      {
+        printf("\t\t%s --transform translate 0,0,%g $(T)/%s $(T)/%s\n",OCCEXE,-height/2,f2,fres);
+      }
+      else
+      {
+        printf("\t\t%s $(T)/%s $(T)/%s\n",MV,f2,fres);
+      }
+      printf("\t\t%s -f $(T)/%s $(T)/%s\n",RM,f1,f2);
       free(f1);
+      free(f2);
     }
   }
   return(0);
