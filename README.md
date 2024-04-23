@@ -25,7 +25,7 @@ You also need to have OpenSCAD installed and available in your path.
 
 4. open your design in OpenSCAD, render and export as CSG
 
-    ```openscad -o model.csg "$@" model.scad```
+    ```openscad -o model.csg model.scad```
 
 5. pipe the csg to csg2xml and redirect the stdout to an xml file
 
