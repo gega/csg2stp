@@ -27,7 +27,7 @@ You also need to have OpenSCAD installed and available in your path.
 
     ```openscad -o model.csg model.scad```
 
-5. pipe the csg to csg2xml and redirect the stdout to an xml file
+5. feed the csg to csg2xml and redirect the stdout to an xml file
 
     ```./csg2xml <model.csg >model.xml```
 
