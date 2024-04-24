@@ -39,7 +39,7 @@ You also need to have OpenSCAD installed and available in your path.
 
     ```make -f model.mak```
 
-8. model.stp is generated, check if valid and complete, if not, go to step 7 and try again
+8. model.stp is generated, check if valid and complete, if not, go to step 6 and try again
 
 ## Fine Print
 
