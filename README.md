@@ -21,7 +21,7 @@ You also need to have OpenSCAD installed and available in your path.
 
 3. build these utilities with cloning this repo and make
 
-    ```git@github.com:gega/csg2stp.git ; cd csg2stp ; make```
+    ```git clone git@github.com:gega/csg2stp.git ; cd csg2stp ; make```
 
 4. open your design in OpenSCAD, render and export as CSG
 
