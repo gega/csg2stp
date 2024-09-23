@@ -15,6 +15,8 @@ This fork has the necessary changes to support the complex conversions:
 - random rotation for rotationally symmetric primitives
 - brep analysis for csg operation to prevent crashes
 
+Compile and install this tool with the extended features.
+
 You also need to have OpenSCAD installed and available in your path.
 
 ## Manual Operation
@@ -53,4 +55,4 @@ You also need to have OpenSCAD installed and available in your path.
 - projection
 - minkowski
 
-**WARNING:** The conversion is not deterministic, for some models it needs to be converted several times in order to get the proper results!
+**WARNING:** The process is not deterministic, for some models it needs to be converted several times in order to get the proper results!
