@@ -1,6 +1,10 @@
 # csg2stp
 convert openscad design to step brep
 
+## Why
+The mesh output from OpenSCAD is not suitable for CNC (the actual shapes are not preserved to compile sane G-CODE). There's no way to add these information after the object is "rendered" to mesh, these information are lost forever. The arcs are turned to polygons, the surfaces are also turned to a mesh, etc. Because of this the only way to build a usable STEP file is to go back to the CSG output of OpenSCAD and rebuild the object using OPENCASCADE which is the only open source BREP library I know.
+
+## Requirements
 Use my fork of OCC-CSG:
 https://github.com/gega/OCC-CSG.git
 branch: sweep
@@ -43,7 +47,7 @@ You also need to have OpenSCAD installed and available in your path.
 
 ## Fine Print
 
-**NOTE:** The following OpenSCAD commands are not supported:
+**NOTE:** The following OpenSCAD commands are not supported because OPENCASCADE doesn't implement them:
 - hull
 - import
 - projection
