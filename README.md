@@ -19,6 +19,20 @@ Compile and install this tool with the extended features.
 
 You also need to have OpenSCAD installed and available in your path.
 
+## Usage
+
+csg2stp.sh part.scad [loops] [args]
+
+- **part.scad:** the OpenSCAD file to be converted
+- **loops:** number of STEP parts generated
+
+  _for complex objects multiple rounds needed to convert successfully_
+
+  [default: 1]
+- **args:** additional OpenSCAD parameters
+
+  [default: none]
+
 ## Manual Operation
 
 1. compile and install OCC-CSG (use my fork and the sweep branch)
